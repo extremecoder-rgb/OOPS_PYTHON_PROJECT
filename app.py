@@ -17,7 +17,7 @@ class devbook:
         elif user_input == "2":
             self.signin()
         elif user_input == "3":
-            pass
+            self.post()
         elif user_input == "4":
             pass
         else:
@@ -43,6 +43,15 @@ class devbook:
                 self.loggedin = True
             else:
                 print("Invalid credentials, please try again.")
+        print("\n")
+        self.menu()
+
+    def post(self):
+        if self.loggedin:
+            content = input("Write your post here -> ")
+            print(f"Your post: {content} has been published!")
+        else:
+            print("You need to sign in first to write a post.")
         print("\n")
         self.menu()
 
