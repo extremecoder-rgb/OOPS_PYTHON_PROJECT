@@ -15,7 +15,7 @@ class devbook:
         if user_input == "1":
             self.signup()
         elif user_input == "2":
-            pass
+            self.signin()
         elif user_input == "3":
             pass
         elif user_input == "4":
@@ -29,6 +29,20 @@ class devbook:
         self.username = email
         self.password = pwd
         print("You have successfully signed up!")
+        print("\n")
+        self.menu()
+
+    def signin(self):
+        if self.username=='' and self.password=='':
+            print("Please signup first by pressing 1 in the main menu.")
+        else:
+            uname = input("Enter your username here -> ")
+            pwd = input("Enter your password here -> ")
+            if uname == self.username and pwd == self.password:
+                print("You have successfully signed in!")
+                self.loggedin = True
+            else:
+                print("Invalid credentials, please try again.")
         print("\n")
         self.menu()
 
